@@ -36,7 +36,6 @@ public class Cell
         return "" + value;
     }
 
-
     public void setColor()
     {
         if ( this.getValue() == 2 )
@@ -61,27 +60,27 @@ public class Cell
         }
         else if ( this.getValue() == 64 )
         {
-            cellColor = new Color( 246, 94, 59 );
+            cellColor = new Color( 237, 207, 114 );
         }
         else if ( this.getValue() == 128 )
         {
-            cellColor = new Color( 237, 207, 114 );
+            cellColor = new Color( 237, 204, 97);
         }
         else if ( this.getValue() == 256 )
         {
-            cellColor = new Color( 237, 204, 97 );
+            cellColor = new Color( 237, 200, 80 );
         }
         else if ( this.getValue() == 512 )
         {
-            cellColor = new Color( 237, 200, 80 );
+            cellColor = new Color( 237, 197, 63 );
         }
         else if ( this.getValue() == 1024 )
         {
-            cellColor = new Color( 237, 197, 63 );
+            cellColor = new Color( 246, 94, 59 );
         }
         else
         {
-            cellColor = new Color( 237, 194, 46 );
+            cellColor = new Color( 246, 94, 59 );
         }
     }
     public Color getColor()
