@@ -68,3 +68,142 @@ public class Board
         }
 
     }
+
+
+    public void up()
+    {
+        for ( int i = 0; i < grids; i++ )
+        {
+            border = 0;
+            for ( int j = 0; j < grids; j++ )
+            {
+                if ( board[j][i].getValue() != 0 )
+                {
+                    if ( border <= j )
+                    {
+                        verticalMove( j, i, "up" );
+                    }
+                }
+            }
+        }
+    }
+
+    public void down()
+    {
+        for ( int i = 0; i < grids; i++ )
+        {
+            border = ( grids - 1 );
+            for ( int j = grids - 1; j >= 0; j-- )
+            {
+                if ( board[j][i].getValue() != 0 )
+                {
+                    if ( border >= j )
+                    {
+                        verticalMove( j, i, "down" );
+                    }
+                }
+            }
+        }
+    }
+
+    private void verticalMove( int row, int col, String direction )
+    {
+        Cell initial = board[border][col];
+        Cell compare = board[row][col];
+        if ( initial.getValue() == 0 || initial.getValue() == compare.getValue() )
+        {
+            if ( row > border || ( direction.equals( "down" ) && ( row < border ) ) )
+            {
+                int addScore = initial.getValue() + compare.getValue();
+                if ( initial.getValue() != 0 )
+                {
+                    score += addScore;
+                }
+                initial.setValue( addScore );
+                compare.setValue( 0 );
+            }
+        }
+        else
+        {
+            if ( direction.equals( "down" ) )
+            {
+                border--;
+            }
+            else
+            {
+                border++;
+            }
+            verticalMove( row, col, direction );
+        }
+    }
+
+
+    public void left()
+    {
+        for ( int i = 0; i < grids; i++ )
+        {
+            border = 0;
+            for ( int j = 0; j < grids; j++ )
+            {
+                if ( board[i][j].getValue() != 0 )
+                {
+                    if ( border <= j )
+                    {
+                        horizontalMove( i, j, "left" );
+                    }
+                }
+            }
+        }
+    }
+
+
+    public void right()
+    {
+        for ( int i = 0; i < grids; i++ )
+        {
+            border = ( grids - 1 );
+            for ( int j = ( grids - 1 ); j >= 0; j-- )
+            {
+                if ( board[i][j].getValue() != 0 )
+                {
+                    if ( border >= j )
+                    {
+                        horizontalMove( i, j, "right" );
+                    }
+                }
+            }
+        }
+    }
+
+    private void horizontalMove( int row, int col, String direction )
+    {
+        Cell initial = board[row][border];
+        Cell compare = board[row][col];
+        if ( initial.getValue() == 0 || initial.getValue() == compare.getValue() )
+        {
+            if ( col > border || ( direction.equals( "right" ) && ( col < border ) ) )
+            {
+                int addScore = initial.getValue() + compare.getValue();
+                if ( initial.getValue() != 0 )
+                {
+                    score += addScore;
+                }
+                initial.setValue( addScore );
+                compare.setValue( 0 );
+            }
+        }
+        else
+        {
+            if ( direction.equals( "right" ) )
+            {
+                border--;
+            }
+            else
+            {
+                border++;
+            }
+            horizontalMove( row, col, direction );
+        }
+    }
+
+}
