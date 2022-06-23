@@ -22,13 +22,13 @@ public class Board
             }
         }
     }
-
+//Instrukcja zwracająca planszę
     public Cell[][] getBoard()
     {
         return board;
     }
 
-
+//Instrukcja, która zwraca nam planszę jako stringa, używane w GUI
     public String toString()
     {
         String s = "";
@@ -42,7 +42,7 @@ public class Board
         }
         return s;
     }
-
+//Instrukcje odpowiadające za pojawianie się komórek po każdym wykonanym ruchu
     public void spawn()
     {
         boolean empty = true;
@@ -64,12 +64,9 @@ public class Board
                     empty = false;
                 }
             }
-
         }
-
     }
-
-
+//Instrukcje odpowiadające za przesuwanie się komórek na planszy.
     public void up()
     {
         for ( int i = 0; i < grids; i++ )
@@ -105,7 +102,8 @@ public class Board
             }
         }
     }
-
+//Instrukcje odpowiadające za porównywanie wartości komórek, jeśli są takie same lub
+//jedna z nich jest równa 0 to są sumowane.
     private void verticalMove( int row, int col, String direction )
     {
         Cell initial = board[border][col];
@@ -205,5 +203,3 @@ public class Board
             horizontalMove( row, col, direction );
         }
     }
-
-}
