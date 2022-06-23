@@ -22,7 +22,7 @@ public class Game extends JPanel implements KeyListener
 
     String gameBoard = game.toString();
 
-
+//Ustawienie GUI w odpowiednim rozmiarze oraz dodanie Key Listnera
     public static void setUpGUI()
     {
         frame.addKeyListener(newGame);
@@ -32,31 +32,32 @@ public class Game extends JPanel implements KeyListener
         frame.setResizable(false);
 
     }
-
+//Instrukcję pobierające informacje czy klawisze "wasd" oraz "enter" są wciśnięte i wykonanie odpowiednich
+//poleceń związanych z tym.
     @Override
     public void keyPressed(KeyEvent e) {
-        if (e.getKeyChar() == 'w' || e.getKeyCode() == KeyEvent.VK_UP)
+        if (e.getKeyChar() == 'w')
         {
             game.up();
             game.spawn();
             gameBoard = game.toString();
             frame.repaint();
         }
-        else if (e.getKeyChar() == 's' || e.getKeyCode() == KeyEvent.VK_DOWN)
+        else if (e.getKeyChar() == 's')
         {
             game.down();
             game.spawn();
             gameBoard = game.toString();
             frame.repaint();
         }
-        else if (e.getKeyChar() == 'a' || e.getKeyCode() == KeyEvent.VK_LEFT)
+        else if (e.getKeyChar() == 'a')
         {
             game.left();
             game.spawn();
             gameBoard = game.toString();
             frame.repaint();
         }
-        else if (e.getKeyChar() == 'd' || e.getKeyCode() == KeyEvent.VK_RIGHT)
+        else if (e.getKeyChar() == 'd')
         {
             game.right();
             game.spawn();
