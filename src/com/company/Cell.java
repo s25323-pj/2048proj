@@ -2,7 +2,8 @@ package com.company;
 
 import java.awt.Color;
 
-
+//Tworzymy klasę komórka, poniżej ustawiamy jej kolory dla odpowiednich wartości w grze,
+//aby zwiększyć przejrzystość i ulepszyć wygląd
 public class Cell
 {
     int value;
