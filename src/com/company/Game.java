@@ -85,7 +85,7 @@ public class Game extends JPanel implements KeyListener
         super.paint(g);
         Graphics2D g2 = (Graphics2D) g;
         g2.drawString("Press 'Enter' to Start", 210, 315);
-        g2.drawString("Use 'wasd' to move", 180, 335);
+        g2.drawString("Use 'wsad' to move", 213, 335);
         g2.setColor(Color.gray);
         g2.fillRect(140, 50, 250, 250);
 
