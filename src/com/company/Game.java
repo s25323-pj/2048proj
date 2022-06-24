@@ -72,5 +72,46 @@ public class Game extends JPanel implements KeyListener
             frame.repaint();
         }
     }
+    @Override
+    public void keyReleased(KeyEvent e) {
+    }
 
+    @Override
+    public void keyTyped(KeyEvent e) {
+    }
+
+    public void paint(Graphics g)
+    {
+        super.paint(g);
+        Graphics2D g2 = (Graphics2D) g;
+        g2.drawString("Press 'Enter' to Start", 210, 315);
+        g2.drawString("Use 'wasd' to move", 180, 335);
+        g2.setColor(Color.gray);
+        g2.fillRect(140, 50, 250, 250);
+
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                drawTiles(g, game.board[i][j], j * 60 + 150, i * 60 + 60);
+            }
+        }
+
+    }
+
+    public void drawTiles(Graphics g, Cell cell, int x, int y) {
+        int tileValue = cell.getValue();
+        int length = String.valueOf(tileValue).length();
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setColor(Color.lightGray);
+        g2.fillRoundRect(x, y, 50, 50, 5, 5);
+        g2.setColor(Color.black);
+        if (tileValue > 0) {
+            g2.setColor(cell.getColor());
+            g2.fillRoundRect(x, y, 50, 50, 5, 5);
+            g2.setColor(Color.black);
+            g.drawString("" + tileValue, x + 25 - 3 * length, y + 25);
+        }
+    }
+}
 
