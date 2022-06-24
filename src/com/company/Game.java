@@ -83,7 +83,7 @@ public class Game extends JPanel implements KeyListener
     {
         super.paint(g);
         Graphics2D g2 = (Graphics2D) g;
-        g2.drawString("Press 'Enter' to Start", 210, 315);
+        g2.drawString("Press 'Enter' to Start new game", 190, 315);
         g2.drawString("Use 'wasd' to move", 213, 335);
         g2.drawString( "2048 GAME", 235, 30 );
         g2.setColor(Color.darkGray);
@@ -95,7 +95,6 @@ public class Game extends JPanel implements KeyListener
                 drawTiles(g, game.board[i][j], j * 60 + 150, i * 60 + 60);
             }
         }
-
     }
 //Instrukcja odpwiedzialna za rysowanie komórek
     public void drawTiles(Graphics g, Cell cell, int x, int y) {

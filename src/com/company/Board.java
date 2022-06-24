@@ -203,3 +203,4 @@ public class Board
             horizontalMove( row, col, direction );
         }
     }
+}
