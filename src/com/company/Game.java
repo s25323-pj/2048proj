@@ -18,8 +18,6 @@ public class Game extends JPanel implements KeyListener
 
     static JFrame frame = new JFrame("2048");
 
-    static Color blue;
-
     String gameBoard = game.toString();
 
 //Ustawienie GUI w odpowiednim rozmiarze oraz dodanie Key Listnera
