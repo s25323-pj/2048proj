@@ -32,7 +32,7 @@ public class Game extends JPanel implements KeyListener
         frame.setResizable(false);
 
     }
-//Instrukcję pobierające informacje czy klawisze "wasd" oraz "enter" są wciśnięte i wykonanie odpowiednich
+//Instrukcję pobierające informacje czy klawisze "wasd" lub "enter" są wciśnięte i wykonanie odpowiednich
 //poleceń związanych z tym.
     @Override
     public void keyPressed(KeyEvent e) {
@@ -80,14 +80,15 @@ public class Game extends JPanel implements KeyListener
     public void keyTyped(KeyEvent e) {
     }
 
+//Instrukcja odpowiedzialna za rysowanie. W tym przyapdku: napisów w odpowiednim miejscu, koloru i wielkości plaszny pod komórkami.
     public void paint(Graphics g)
     {
         super.paint(g);
         Graphics2D g2 = (Graphics2D) g;
         g2.drawString("Press 'Enter' to Start", 210, 315);
-        g2.drawString("Use 'wsad' to move", 213, 335);
-        g2.setColor(Color.gray);
-        g2.fillRect(140, 50, 250, 250);
+        g2.drawString("Use 'wasd' to move", 213, 335);
+        g2.drawString( "2048 GAME", 235, 30 );
+        g2.setColor(Color.darkGray);
 
         for (int i = 0; i < 4; i++)
         {
@@ -98,7 +99,7 @@ public class Game extends JPanel implements KeyListener
         }
 
     }
-
+//Instrukcja odpwiedzialna za rysowanie komórek
     public void drawTiles(Graphics g, Cell cell, int x, int y) {
         int tileValue = cell.getValue();
         int length = String.valueOf(tileValue).length();
@@ -106,6 +107,7 @@ public class Game extends JPanel implements KeyListener
         g2.setColor(Color.lightGray);
         g2.fillRoundRect(x, y, 50, 50, 5, 5);
         g2.setColor(Color.black);
+//Pobiera informacje od odpowiednim kolorze komórki dla danej wartości oraz umieszcza ją odpowiednio.
         if (tileValue > 0) {
             g2.setColor(cell.getColor());
             g2.fillRoundRect(x, y, 50, 50, 5, 5);
