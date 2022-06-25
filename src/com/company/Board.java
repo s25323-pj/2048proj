@@ -11,7 +11,7 @@ public class Board
 
     public int score = 0;
 
-
+//Tworzenie komórek
     public Board()
     {
         board = new Cell[4][4];
@@ -149,7 +149,6 @@ public class Board
             }
         }
     }
-
 
     public void right()
     {
