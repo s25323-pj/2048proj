@@ -1,5 +1,6 @@
 package com.company;
 
+//Tworzymy planszę
 public class Board
 {
     public Cell[][] board;
@@ -21,11 +22,6 @@ public class Board
                 board[i][j] = new Cell();
             }
         }
-    }
-//Instrukcja zwracająca planszę
-    public Cell[][] getBoard()
-    {
-        return board;
     }
 
 //Instrukcja, która zwraca nam planszę jako stringa, używane w GUI

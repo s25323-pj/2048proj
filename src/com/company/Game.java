@@ -9,7 +9,7 @@ import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-
+//Ustawienie Jframe
 public class Game extends JPanel implements KeyListener
 {
     Board game = new Board();
@@ -28,10 +28,11 @@ public class Game extends JPanel implements KeyListener
         frame.setSize(600, 400);
         frame.setVisible(true);
         frame.setResizable(false);
-
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 //Instrukcję pobierające informacje czy klawisze "wasd" lub "enter" są wciśnięte i wykonanie odpowiednich
 //poleceń związanych z tym.
+//Domyślny konstruktor do keyEventa
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyChar() == 'w')
@@ -70,6 +71,7 @@ public class Game extends JPanel implements KeyListener
             frame.repaint();
         }
     }
+//Domyślny konstruktor dla KeyEvent
     @Override
     public void keyReleased(KeyEvent e) {
     }
@@ -112,5 +114,6 @@ public class Game extends JPanel implements KeyListener
             g.drawString("" + tileValue, x + 25 - 3 * length, y + 25);
         }
     }
+
 }
 
